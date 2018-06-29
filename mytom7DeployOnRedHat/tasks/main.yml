@@ -5,8 +5,8 @@
     path: /usr/share/tomcat/webapps/{{ item }}
     state: absent
   with_items:
-    - SKRlogin
-    - SKRlogin.war
+    - gameoflife
+    - gameoflife.war
   when: ansible_os_family =="RedHat"
 
 
@@ -14,7 +14,7 @@
 
 - name: Download the war file and keep in webapps folder
   get_url:
-    url: http://54.169.150.153:8081/artifactory/SKRSIT/4/gameoflife-web/target/gameoflife.war
+    url: http://52.221.204.209:8081/artifactory/SKRSIT/5/gameoflife-web/target/gameoflife.war
     dest:  /usr/share/tomcat/webapps/
     force_basic_auth: yes
   notify: restarttom7
