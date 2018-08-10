@@ -1,0 +1,20 @@
+---
+- studentsDetails:
+  - name: hari
+    phNo: 88888888
+    address:
+      dno: 1
+      pin: 50072
+    course: aws
+  - name: ravi
+    phNo: 88888889
+    address:
+      dno: 3
+      pin: 50072
+    course:
+      - devops
+      - aws
+
+
+
+
