@@ -1,0 +1,3 @@
+---
+javaonubuntu: openjdk-6-jre
+javaonRedhat: java-1.6.0-openjdk
