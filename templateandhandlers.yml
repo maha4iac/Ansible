@@ -7,14 +7,20 @@
     yum:
       name: httpd
       state: present
+    notify: starthttpd
     when: ansible_os_family =="RedHat"
-  - name: start the httpd service
-    service:
-      name: httpd
-      state: started
-    when: ansible_os_family =="RedHat"
+     
   - name: copy the index file from cm to all redhat nodes
     template:
       src: myindex.j2
       dest: /var/www/html/index.html
+    notify: starthttpd
     when: ansible_os_family =="RedHat"
+
+
+  handlers:
+  - name: starthttpd 
+    service:
+      name: httpd
+      state: started
+      
