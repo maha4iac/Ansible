@@ -2,7 +2,7 @@
 - hosts: mywebservers
   become: yes
   tasks:
-  - include_task: myfiel.yml
+  - include_tasks: myfiel.yml
   - name: install webserver on redhat
     yum:
       name: httpd
