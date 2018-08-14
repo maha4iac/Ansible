@@ -16,7 +16,7 @@
     yum:
       name: git
       state: present
-    when:   myresult.stderr  ==""
+    when: myresult.stderr  ==""
   - name: install tree if stderr is not emty
     yum: 
       name: tree
