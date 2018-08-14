@@ -11,3 +11,14 @@
     debug:
       msg: "{{ myresult }}"
     when: ansible_os_family =="RedHat"
+
+  - name: install git if stderr is emty
+    yum:
+      name: git
+      state: present
+    when:   myresult.stderr  ==""
+  - name: install tree if stderr is not emty
+    yum: 
+      name: tree
+      state: present
+    when: myresult.stderr  !=""
