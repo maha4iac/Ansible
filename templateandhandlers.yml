@@ -5,9 +5,10 @@
   - include_tasks: myfiel.yml
   - name: install webserver on redhat
     yum:
-      name: httpd
+      namee: httpd
       state: present
     notify: starthttpd
+    ignore_errors: yes
     when: ansible_os_family =="RedHat"
      
   - name: copy the index file from cm to all redhat nodes
@@ -15,6 +16,7 @@
       src: myindex.j2
       dest: /var/www/html/index.html
     notify: starthttpd
+    ignore_errors: yes
     when: ansible_os_family =="RedHat"
 
 
