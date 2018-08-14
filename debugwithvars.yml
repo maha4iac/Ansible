@@ -1,0 +1,13 @@
+---
+- hosts: mywebservers
+  become: yes
+  vars:
+    myvar1: maha
+    myvar2: kiran
+  tasks:
+  - name: display the gorup var values
+    debug:
+      msg: "{{ cpmname }}"
+  - name: display the  palybook  var1  values
+    debug:
+      msg: "{{ myvar1 }}"
