@@ -1,5 +1,5 @@
 ---
-hosts: appserver
-become: yes
-roles:
-  - {role: mytominstall, when: ansile_os-family=="RedHat"}
+- hosts: appserver
+  become: yes
+  roles:
+    - {role: mytominstall, when: ansile_os-family=="RedHat"}
