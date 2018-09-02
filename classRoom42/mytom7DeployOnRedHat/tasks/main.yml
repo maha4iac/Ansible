@@ -14,7 +14,7 @@
 
 - name: Download the war file and keep in webapps folder
   get_url:
-    url:  http://18.136.193.17:8081/artifactory/test/{{ buildnoo }}/target/SKRLogin-1.0.war
+    url:  http://54.169.52.94:8081/artifactory/SKRSIT/2/target/SKRLogin-1.0.war
     dest:  /usr/share/tomcat/webapps/
     force_basic_auth: yes
   notify: restarttom7
