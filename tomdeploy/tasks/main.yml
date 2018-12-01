@@ -1,19 +1,19 @@
 ---
 # tasks file for tomdeploy
-- name : delete the skrlogin file and skrlogin.war file
+- name : delete the mahalogin file and mahalogin.war file
   file:
     path: "{{ item }}"
     state: absent
   with_items: 
-    - /usr/share/tomcat/webapps/SKRLogin-1.0
-    - /usr/share/tomcat/webapps/SKRLogin-1.0.war
+    - /usr/share/tomcat/webapps/mahaLogin-1.0
+    - /usr/share/tomcat/webapps/mahaLogin-1.0.war
   when: ansible_os_family =="RedHat"
   
 
 
 - name: deploy the war file on all application(nodes)
   get_url:
-    url: http://18.136.193.17:8081/artifactory/test/2/target/SKRLogin-1.0.war
+    url: http://18.136.193.17:8081/artifactory/test/2/target/mahaLogin-1.0.war
     dest: /usr/share/tomcat/webapps/
     force_basic_auth: yes
   when: ansible_os_family =="RedHat"
