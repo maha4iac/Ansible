@@ -5,8 +5,8 @@
     path: /usr/share/tomcat/webapps/{{ item }}
     state: absent
   with_items:
-    - SKRLogin-1.0
-    - SKRLogin-1.0.war
+    - mahaLogin-1.0
+    - mahaLogin-1.0.war
   when: ansible_os_family =="RedHat"
 
 
@@ -14,7 +14,7 @@
 
 - name: Download the war file and keep in webapps folder
   get_url:
-    url:  http://54.169.52.94:8081/artifactory/SKRSIT/2/target/SKRLogin-1.0.war
+    url:  http://54.169.52.94:8081/artifactory/SKRSIT/2/target/mahaLogin-1.0.war
     dest:  /usr/share/tomcat/webapps/
     force_basic_auth: yes
   notify: restarttom7
